@@ -23,9 +23,6 @@
             android:name=".Settings"
             android:exported="false" />
         <activity
-            android:name=".Home"
-            android:exported="false" />
-        <activity
             android:name=".login"
             android:exported="false" />
         <activity

@@ -26,7 +26,7 @@ public class About extends AppCompatActivity {
                 switch (item.getItemId())
                 {
                     case R.id.menuHome:
-                        startActivity(new Intent(getApplicationContext(), Home.class));
+                        startActivity(new Intent(getApplicationContext(), MainActivity.class));
                         overridePendingTransition(0,0);
                         return true;
                     case R.id.menuAbout:

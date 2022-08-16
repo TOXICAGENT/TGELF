@@ -74,3 +74,4 @@ public class MainActivity extends AppCompatActivity {
         flipper.setOutAnimation(this, android.R.anim.slide_out_right);
     }
 }
+// hctyfctydtrytt

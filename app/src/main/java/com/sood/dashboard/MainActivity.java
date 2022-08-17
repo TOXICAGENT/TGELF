@@ -38,7 +38,27 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, Academies.class);
         startActivity(intent);
 
+<<<<<<< Updated upstream
         //-------------------------------------------------------------
+=======
+                switch (item.getItemId())
+                {
+                    case R.id.menuHome:
+                        return true;
+                    case R.id.menuAbout:
+                        startActivity(new Intent(getApplicationContext(), aboutUs.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                    case R.id.menuAccount:
+                        startActivity(new Intent(getApplicationContext(), Account.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                    case R.id.menuSettings:
+                        startActivity(new Intent(getApplicationContext(), Settings.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                }
+>>>>>>> Stashed changes
 
         button = (Button) findViewById(R.id.button2);
         button.setOnClickListener(new View.OnClickListener() {

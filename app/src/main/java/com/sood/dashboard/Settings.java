@@ -30,7 +30,7 @@ public class Settings extends AppCompatActivity {
                         overridePendingTransition(0,0);
                         return true;
                     case R.id.menuAbout:
-                        startActivity(new Intent(getApplicationContext(), About.class));
+                        startActivity(new Intent(getApplicationContext(), aboutUs.class));
                         overridePendingTransition(0,0);
                         return true;
                     case R.id.menuAccount:

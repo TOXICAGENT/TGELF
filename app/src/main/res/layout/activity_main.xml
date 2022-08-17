@@ -141,14 +141,11 @@
                     android:padding="8dp"
                     android:src="@drawable/images__1_" />
 
-                <TextView
+                <Button
+                    android:id="@+id/button"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text="@string/academies"
-                    android:textColor="@color/colorAccent"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
+                    android:text="@string/academies" />
 
             </LinearLayout>
 
@@ -175,14 +172,11 @@
                     android:padding="8dp"
                     android:src="@drawable/images" />
 
-                <TextView
+                <Button
+                    android:id="@+id/button2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text="@string/tournaments"
-                    android:textColor="@color/colorAccent"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
+                    android:text="@string/tournaments" />
 
             </LinearLayout>
 
@@ -210,14 +204,11 @@
                     android:padding="8dp"
                     android:src="@drawable/sport_equipment_2_22802518" />
 
-                <TextView
+                <Button
+                    android:id="@+id/button3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text="@string/donate"
-                    android:textColor="@color/colorAccent"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
+                    android:text="@string/donate" />
 
             </LinearLayout>
 
@@ -246,14 +237,11 @@
                     android:padding="8dp"
                     android:src="@drawable/all_sports_banner" />
 
-                <TextView
+                <Button
+                    android:id="@+id/button4"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text="@string/empty"
-                    android:textColor="@color/colorAccent"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
+                    android:text="@string/empty" />
 
             </LinearLayout>
 

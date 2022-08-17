@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="about_About"></style>
+
+    <style name="about_AboutBase_Dark"></style>
+
+    <style name="about_AboutBase_Light"></style>
+
+    <style name="about_groupTextAppearance"></style>
+
+    <style name="about_elementTextAppearance"></style>
+</resources>

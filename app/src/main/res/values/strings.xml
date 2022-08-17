@@ -14,4 +14,12 @@
     <string name="dashboard2">TGELF</string>
     <string name="about">About</string>
     <string name="security_privacy"><![CDATA[Security & Privacy]]></string>
+    <string name="copy_right" />
+    <string name="about_contact_us" />
+    <string name="about_facebook" />
+    <string name="about_twitter" />
+    <string name="about_play_store" />
+    <string name="about_youtube" />
+    <string name="about_instagram" />
+    <string name="about_website" />
 </resources>

@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.Toast;
-import androidx.appcompat.app.AppCompatActivity;
 import java.util.Calendar;
 import mehdi.sakout.aboutpage.AboutPage;
 import mehdi.sakout.aboutpage.Element;
@@ -23,11 +22,11 @@ public class About extends AppCompatActivity {
 
         View aboutPage = new AboutPage(this)
                 .isRTL(false)
-                .setImage(R.drawable.dummy_image)
-                .addItem(new Element().setTitle("Version 6.2"))
+                .setImage(R.drawable.images)
+                .addItem(new Element().setTitle("Version 1"))
                 .addItem(adsElement)
                 .addGroup("Connect with us")
-                .addEmail("elmehdi.sakout@gmail.com")
+                .addEmail("todo")
                 .addWebsite("https://mehdisakout.com/")
                 .addFacebook("the.medy")
                 .addTwitter("medyo80")

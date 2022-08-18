@@ -1,5 +1,7 @@
 package com.sood.dashboard;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.Gravity;
@@ -7,10 +9,10 @@ import android.view.View;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import java.util.Calendar;
-import com.sood.dashboard.AboutPage;
-import com.sood.dashboard.Element;
+import mehdi.sakout.aboutpage.AboutPage;
+import mehdi.sakout.aboutpage.Element;
 
-public class aboutUs extends AppCompatActivity {
+public class About extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,29 +34,25 @@ public class aboutUs extends AppCompatActivity {
                 .addYoutube("UCdPQtdWIsg7_pi4mrRu46vA")
                 .addPlayStore("com.ideashower.readitlater.pro")
                 .addInstagram("medyo80")
-                .addItem(getCopyRightsElement())
+                .addGitHub("medyo")
+                .addItem(createCopyright())
                 .create();
 
         setContentView(aboutPage);
     }
-
-
-    Element getCopyRightsElement() {
-        Element copyRightsElement = new Element();
-        @SuppressLint({"StringFormatInvalid", "LocalSuppress"}) final String copyrights = String.format(getString(R.string.copy_right), Calendar.getInstance().get(Calendar.YEAR));
-        copyRightsElement.setTitle(copyrights);
-        copyRightsElement.setIconDrawable(R.drawable.about_icon_copy_right);
-        copyRightsElement.setAutoApplyIconTint(true);
-        copyRightsElement.setIconTint(com.sood.dashboard.R.color.about_item_icon_color);
-        copyRightsElement.setIconNightTint(android.R.color.white);
-        copyRightsElement.setGravity(Gravity.CENTER);
-        copyRightsElement.setOnClickListener(new View.OnClickListener() {
+    private Element createCopyright()
+    {
+        Element copyright = new Element();
+        @SuppressLint("DefaultLocale") final String copyrightString = String.format("Copyright %d by Your Name", Calendar.getInstance().get(Calendar.YEAR));
+        copyright.setTitle(copyrightString);
+        // copyright.setIcon(R.mipmap.ic_launcher);
+        copyright.setGravity(Gravity.CENTER);
+        copyright.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(aboutUs.this, copyrights, Toast.LENGTH_SHORT).show();
+                Toast.makeText(About.this,copyrightString,Toast.LENGTH_SHORT).show();
             }
         });
-        return copyRightsElement;
+        return copyright;
     }
 }
-

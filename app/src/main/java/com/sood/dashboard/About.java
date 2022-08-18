@@ -35,24 +35,28 @@ public class About extends AppCompatActivity {
                 .addPlayStore("com.ideashower.readitlater.pro")
                 .addInstagram("medyo80")
                 .addGitHub("medyo")
-                .addItem(createCopyright())
+                .addItem(getCopyRightsElement())
                 .create();
 
         setContentView(aboutPage);
     }
-    private Element createCopyright()
-    {
-        Element copyright = new Element();
-        @SuppressLint("DefaultLocale") final String copyrightString = String.format("Copyright %d by Your Name", Calendar.getInstance().get(Calendar.YEAR));
-        copyright.setTitle(copyrightString);
-        // copyright.setIcon(R.mipmap.ic_launcher);
-        copyright.setGravity(Gravity.CENTER);
-        copyright.setOnClickListener(new View.OnClickListener() {
+
+
+    Element getCopyRightsElement() {
+        Element copyRightsElement = new Element();
+        @SuppressLint({"StringFormatInvalid", "LocalSuppress"}) final String copyrights = String.format(getString(R.string.copy_right), Calendar.getInstance().get(Calendar.YEAR));
+        copyRightsElement.setTitle(copyrights);
+        copyRightsElement.setIconDrawable(R.drawable.about_icon_copy_right);
+        copyRightsElement.setAutoApplyIconTint(true);
+        copyRightsElement.setIconTint(mehdi.sakout.aboutpage.R.color.about_item_icon_color);
+        copyRightsElement.setIconNightTint(android.R.color.white);
+        copyRightsElement.setGravity(Gravity.CENTER);
+        copyRightsElement.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(About.this,copyrightString,Toast.LENGTH_SHORT).show();
+                Toast.makeText(About.this, copyrights, Toast.LENGTH_SHORT).show();
             }
         });
-        return copyright;
+        return copyRightsElement;
     }
 }

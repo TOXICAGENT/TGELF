@@ -7,6 +7,8 @@ import android.view.View;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import java.util.Calendar;
+import com.sood.dashboard.AboutPage;
+import com.sood.dashboard.Element;
 
 public class aboutUs extends AppCompatActivity {
 

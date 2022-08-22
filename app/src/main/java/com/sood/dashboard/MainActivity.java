@@ -14,9 +14,8 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.button.MaterialButton;
 
 public class MainActivity extends AppCompatActivity {
-
-    BottomNavigationView bottomNavigationView;
     ViewFlipper flipper;
+    BottomNavigationView bottomNavigationView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.menuHome:
                         return true;
                     case R.id.menuAbout:
-                        startActivity(new Intent(getApplicationContext(), aboutUs.class));
+                        startActivity(new Intent(getApplicationContext(), About.class));
                         overridePendingTransition(0,0);
                         return true;
                     case R.id.menuAccount:
@@ -50,7 +49,6 @@ public class MainActivity extends AppCompatActivity {
                 return false;
             }
         });
-
         int imgarray[] = {R.drawable.all_sports_banner, R.drawable.images, R.drawable.images__1_, R.drawable.sport_equipment_2_22802518};
 
         flipper=(ViewFlipper) findViewById(R.id.flipper);

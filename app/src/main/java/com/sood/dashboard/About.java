@@ -1,61 +1,51 @@
 package com.sood.dashboard;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
-import android.view.Gravity;
-import android.view.View;
-import android.widget.Toast;
-import java.util.Calendar;
-import mehdi.sakout.aboutpage.AboutPage;
-import mehdi.sakout.aboutpage.Element;
+import android.view.MenuItem;
+import android.widget.ViewFlipper;
+
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class About extends AppCompatActivity {
 
+    BottomNavigationView bottomNavigationView;
+    ViewFlipper flipper;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_about2);
 
-        Element adsElement = new Element();
-        adsElement.setTitle("Advertise with us");
+        bottomNavigationView = findViewById(R.id.bottomNavigationView);
+        bottomNavigationView.setSelectedItemId(R.id.menuAbout);
 
-        View aboutPage = new AboutPage(this)
-                .isRTL(false)
-                .setImage(R.drawable.images)
-                .addItem(new Element().setTitle("Version 1"))
-                .addItem(adsElement)
-                .addGroup("Connect with us")
-                .addEmail("todo")
-                .addWebsite("https://mehdisakout.com/")
-                .addFacebook("the.medy")
-                .addTwitter("medyo80")
-                .addYoutube("UCdPQtdWIsg7_pi4mrRu46vA")
-                .addPlayStore("com.ideashower.readitlater.pro")
-                .addInstagram("medyo80")
-                .addGitHub("medyo")
-                .addItem(getCopyRightsElement())
-                .create();
-
-        setContentView(aboutPage);
-    }
-
-
-    Element getCopyRightsElement() {
-        Element copyRightsElement = new Element();
-        @SuppressLint({"StringFormatInvalid", "LocalSuppress"}) final String copyrights = String.format(getString(R.string.copy_right), Calendar.getInstance().get(Calendar.YEAR));
-        copyRightsElement.setTitle(copyrights);
-        copyRightsElement.setIconDrawable(R.drawable.about_icon_copy_right);
-        copyRightsElement.setAutoApplyIconTint(true);
-        copyRightsElement.setIconTint(mehdi.sakout.aboutpage.R.color.about_item_icon_color);
-        copyRightsElement.setIconNightTint(android.R.color.white);
-        copyRightsElement.setGravity(Gravity.CENTER);
-        copyRightsElement.setOnClickListener(new View.OnClickListener() {
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
-            public void onClick(View v) {
-                Toast.makeText(About.this, copyrights, Toast.LENGTH_SHORT).show();
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+                switch (item.getItemId())
+                {
+                    case R.id.menuHome:
+                        startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                    case R.id.menuAbout:
+                        return true;
+                    case R.id.menuAccount:
+                        startActivity(new Intent(getApplicationContext(), Account.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                    case R.id.menuSettings:
+                        startActivity(new Intent(getApplicationContext(), Settings.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                }
+
+                return false;
             }
         });
-        return copyRightsElement;
     }
 }
